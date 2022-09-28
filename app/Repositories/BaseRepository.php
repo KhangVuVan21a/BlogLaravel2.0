@@ -13,7 +13,12 @@ abstract class BaseRepository  implements RepositoryInterface
     }
     public function getAll($attributes= []){
         if(empty($attributes['s']))
+        {
+            return $this->model->all();
+        }
+        else{
             $attributes['s']='';
+        }
         return $this->model->where('title','like','%'.$attributes['s'].'%')->get(); 
     }
     public function find($id)

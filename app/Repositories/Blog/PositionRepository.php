@@ -4,7 +4,7 @@ namespace App\Repositories\Blog;
 use App\Models\Position;
 use App\Repositories\BaseRepository;
 
-class PositionRepository extends BaseRepository implements CategoryRepositoryInterface{
+class PositionRepository extends BaseRepository implements PositionRepositoryInterface{
     /**
      * Get Model Post
      */
@@ -20,7 +20,7 @@ class PositionRepository extends BaseRepository implements CategoryRepositoryInt
      * @return mixed
      */
     public function search($title){
-        $result = $this -> model -> where('title', 'LIKE', '%'.$title.'%')->get();
+        $result = $this -> model -> where('address', 'LIKE', '%'.$title.'%')->get();
         return $result;
     }
 }

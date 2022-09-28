@@ -31,4 +31,5 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 Route::resource('blogs', App\Http\Controllers\API\BlogController::class);
 Route::get('blogs/search/{title}', [App\Http\Controllers\API\BlogController::class,'search']);
 Route::put('blogs/update/{id}', [App\Http\Controllers\API\BlogController::class,'update']);
-
+Route::resource('categories', App\Http\Controllers\API\CategoryController::class);
+Route::resource('positions', App\Http\Controllers\API\PositionController::class);

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class category extends Model
 {
-    protected $guarded = ['title'];
+    protected $guarded = ['id','created_at','updated_at'];
     use HasFactory;
 }
