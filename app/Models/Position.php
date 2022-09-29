@@ -9,4 +9,7 @@ class Position extends Model
 {
     protected $guarded = ['id','created_at','updated_at'];
     use HasFactory;
+    public function blogs(){
+        return $this->BelongsTo(Blog::class,'blogId','id');
+    }
 }
